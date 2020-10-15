@@ -21,7 +21,7 @@ export default function FilterBox() {
             </div>
             <p>Successfull Land</p>
             <hr/>
-            <div className = 'year-container'>
+            <div className = 'year-container' style={{marginBottom:'1em'}}>
                 <button onClick = {() => filterLand(true)} className= 'year-box'>True</button>
                 <button onClick = {() => filterLand(false)} className= 'year-box'>False</button>
             </div>

@@ -243,13 +243,11 @@ main{
     align-items: flex-start;
   }
   .box{
-    /* display: inline-flex; */
     min-width: 80vw;
-    min-height: 50vh;
+    min-height: 60vh;
     margin :1.5vw;
   }
   .box img{
-    /* display: inline-table; */
     min-width: 60vw;
     min-height: 30vh;
   }
