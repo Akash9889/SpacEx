@@ -246,6 +246,10 @@ main{
   .box span p{
     font-size: 1rem;
   }
+  .no-data-found{
+    position: relative;
+    left: auto;
+  }
 }
 
 /* ///////////////////// Tablet View ///////////////////// */

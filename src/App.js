@@ -10,9 +10,9 @@ function App() {
   React.useEffect(() => {
     let div = document.getElementsByClassName('year-container')
     if(div[0] !== undefined ){
-      div[0].addEventListener('click', (e) => filterYear(e.target.innerText) )
+      div[0].addEventListener('click', (e) => filterYear(e) )
     }
-    return () => div[0].removeEventListener('click', (e) => filterYear(e.target.innerText) )
+    return () => div[0].removeEventListener('click', (e) => filterYear(e) )
   }
   ,[firstLoad])
 

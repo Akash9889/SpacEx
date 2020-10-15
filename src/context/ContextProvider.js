@@ -55,10 +55,13 @@ function ContextProvider({children}) {
     }, [year, successLaunch, successLand, lazy])
 
 
-    const filterYear    = React.useCallback((ear) => { 
-        setShuttles([])
-        setYear(ear); 
-        setLazy(1); 
+    const filterYear    = React.useCallback((e) => { 
+        if(e.target.nodeName === 'BUTTON' ) {
+            setShuttles([])
+            setYear(e.target.innerHTML); 
+            setLazy(1);
+        }
+         
     }, [year])
 
     const filterLunch   = React.useCallback((launch) => {
