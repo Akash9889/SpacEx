@@ -1,11 +1,12 @@
 import React from 'react'
 import axios from 'axios'
 
+import {launchYears} from '../constants'
+
 const spacexContext = React.createContext()
 
 function ContextProvider({children}) {
     
-    const [data, setData]           = React.useState([])
     const [shuttles, setShuttles]   = React.useState([])
     const [year, setYear]           = React.useState('')
     const [firstLoad, setFirstLoad] = React.useState(true)
@@ -15,26 +16,13 @@ function ContextProvider({children}) {
     const [successLaunch, setSuccessLaunch] = React.useState()
     const [successLand, setSuccessLand]     = React.useState()
     
-    const launchYears = [...(new Set(data.map(d => d.launch_year) ) ) ] 
-    
-    React.useEffect(() => {
-
-        
-            ( async function(){
-                try{
-                    setFirstLoad(true)
-                    const projects = await axios.get(`https://api.spacexdata.com/v3/launches?limit=100`)
-                    setData(projects.data)
-                    setFirstLoad(false)
-                }
-                catch(error){
-                    setError(error)
-                    throw new Error('error')
-                }
-              })()
-       
+    React.useEffect( () => {
+        setFirstLoad(true)
+        setTimeout( () => {
+            setFirstLoad(false)
+        }, 500)
     }, [])
-
+    
     
     React.useEffect(() => {
         const time = setTimeout(() => {
@@ -62,7 +50,7 @@ function ContextProvider({children}) {
                     throw new Error(error)
                 }
             })()
-        }, 1000)
+        }, 300)
         return () => clearTimeout(time)
     }, [year, successLaunch, successLand, lazy])
 

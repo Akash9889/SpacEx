@@ -159,7 +159,17 @@ main{
   animation: spin 2s linear infinite;
   z-index: 100;
 }
-
+.no-data-found{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50,-50);
+  animation: alert 2s step-end 1;
+}
+@keyframes alert{
+  0% { opacity: 0; }
+  100% {  opacity: 1; }
+}
 .box-container{
   display: flex;
   flex-wrap: wrap;

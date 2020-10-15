@@ -42,18 +42,18 @@ function LaunchPad({data}) {
 
     return (
         <div className = 'box-container'>
-                {data.map((sample, index) =>{
-                if(data.length === index +1){
-                    return  <div ref = {setElement} key={sample.flight_number} className='box'>
-                                <SpaceShuttle sample ={sample}/>
-                            </div>
-                }
-                else 
-                    return  <div key={sample.flight_number} className='box'>
-                                <SpaceShuttle sample ={sample}/> 
-                            </div>
-                })}
-            </div>    
+            {data.length !==0 ? data.map((sample, index) =>{
+            if(data.length === index +1){
+                return  <div ref = {setElement} key={sample.flight_number} className='box'>
+                            <SpaceShuttle sample ={sample}/>
+                        </div>
+            }
+            else 
+                return  <div key={sample.flight_number} className='box'>
+                            <SpaceShuttle sample ={sample}/> 
+                        </div>
+            }) : <div className = 'no-data-found'>No data found</div>}
+        </div>    
     )
 }
 
