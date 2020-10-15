@@ -231,6 +231,7 @@ main{
     align-items: center;
   }
   section{
+    min-width: 80vw;
     position: relative;
   }
   .box-container{
@@ -238,33 +239,45 @@ main{
     align-items: flex-start;
   }
   .box{
-    width: 280px;
-    height:400px;
+    min-width: 80vw;
+    min-height: 110vw;
   }
   .box img{
-    max-width :215px;
-    max-height: 215px;
+    min-height: 70vw;
+    min-width: 70vw;
   }
+  .box-contents{
+    min-width: 70vw;
+ }
+  
   .box span p:first-child{
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
   .box span p{
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
   .no-data-found{
     position: relative;
     left: auto;
   }
+  .year-container{
+    min-width: 47vw;
+  }
 }
 
 /* ///////////////////// Tablet View ///////////////////// */
 @media (min-width:701px){
+  main{
+    align-items: flex-start;
+    margin: 1vw 1vw 1vw 1vw;
+  }
   .section{
     min-width:210px;
     max-width: 210px;
     margin-right: 3vw;
   }
   .box-container{
+    width:650px;
     justify-content: flex-start;
     margin-left: 1vw;
     margin-right: 1vw
@@ -272,7 +285,7 @@ main{
   .box{
     width: 180px;
     height: 300px;
-    margin: 1vw 1.5vw 1vw 1.5vw
+    margin: 0vw 1.5vw 1vw 1.5vw
   }
   .box img{
     max-width :165px;
@@ -289,7 +302,12 @@ main{
   .header{
     justify-content: center;
   }
+  main{
+    align-items: flex-start;
+    margin: 1vw 1vw 1vw 1vw;
+  }
   .box-container{
+    width:840px;
     justify-content: flex-start;
     margin-left: 1vw;
     margin-right: 1vw
@@ -297,7 +315,7 @@ main{
   .box{
     width: 230px;
     height:360px;
-    margin: 1vw 2vw 1vw 2vw
+    margin: 0vw 2vw 1vw 2vw
   }
   .box img{
     max-width :215px;
@@ -315,19 +333,24 @@ main{
 
 /* /////////////////////////////////////////// Desktop View //////////////////// */
 @media (min-width:1025px){
+  main{
+    align-items: flex-start;
+    margin: 1vw 1vw 1vw 1vw;
+  }
   .section{
     min-width:210px;
     max-width: 210px;
   }
   .box-container{
     justify-content: flex-start;
+    width:720px;
     margin-left: 1vw;
     margin-right: 1vw
   }
   .box{
     height: 280px;
     width: 160px;
-    margin: 1vw .2vw 1vw .2vw;
+    margin: 0vw .2vw 1vw .2vw;
   }
   .box img{
     max-width :150px;
@@ -342,16 +365,20 @@ main{
 }
 
 @media (min-width:1125px){
-  
+  main{
+    align-items: flex-start;
+    margin: 1vw 1vw 1vw 1vw;
+  }
   .box-container{
     justify-content: flex-start;
+    width:850px;
     margin-left: 1vw;
     margin-right: 1vw
   }
   .box{
     height: 300px;
     width: 190px;
-    margin: 1vw .2vw 1vw .2vw;
+    margin: 0vw .2vw 1vw .2vw;
   }
   .box img{
     max-width :170px;
@@ -360,20 +387,25 @@ main{
 }
 
 @media (min-width:1240px){
+  main{
+    align-items: flex-start;
+    margin: 1vw 1vw 1vw 1vw;
+  }
   .box-container{
+    width: 950px;
     justify-content: flex-start;
-    margin-left: 1vw;
-    margin-right: 1vw
+    margin:0vw 1vw 0vw 1vw;
   }
   .box{
     height: 330px;
     width: 220px;
-    margin: 1vw .2vw 1vw .2vw;
+    margin: 0vw .2vw 1vw .2vw;
   }
   .box img{
     max-width :200px;
     max-height: 200px;
   }
+  
 }
 @media (min-width:1440px){
   main{
