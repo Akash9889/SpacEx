@@ -279,7 +279,7 @@ main{
     margin-right: 3vw;
   }
   .box-container{
-    width:650px;
+    width:415px;
     justify-content: flex-start;
     margin-left: 1vw;
     margin-right: 1vw
@@ -309,7 +309,7 @@ main{
     margin: 1vw 1vw 1vw 1vw;
   }
   .box-container{
-    width:840px;
+    width:545px;
     justify-content: flex-start;
     margin-left: 1vw;
     margin-right: 1vw
@@ -345,7 +345,7 @@ main{
   }
   .box-container{
     justify-content: flex-start;
-    width:720px;
+    width:710px;
     margin-left: 1vw;
     margin-right: 1vw
   }
@@ -373,7 +373,7 @@ main{
   }
   .box-container{
     justify-content: flex-start;
-    width:850px;
+    width:810px;
     margin-left: 1vw;
     margin-right: 1vw
   }
@@ -394,7 +394,7 @@ main{
     margin: 1vw 1vw 1vw 1vw;
   }
   .box-container{
-    width: 950px;
+    width: 910px;
     justify-content: flex-start;
     margin:0vw 1vw 0vw 1vw;
   }
