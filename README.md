@@ -45,7 +45,8 @@ Component and container files -
 =>scope of improvement
 -should include a clear filter option
 -buttons selected state should be maintained
--image error handleing 
+-image error handleing
+-jsdocs need to be added
 
 
 
