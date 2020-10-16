@@ -125,9 +125,26 @@ main{
   box-shadow: 2px 2px 5px #888888;
   cursor: pointer;
 }
-.year-box:focus{
-  background-color:#4b9e44c0;
+.clear-filter{
+  height: 30px;
+  width: 100%;
+  margin: 1vw;
+  font-weight: 400;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  border-radius: 3px;
+  background-color:#aed87e;
+  outline: none;
+  border: none;
+}
+.clear-filter:hover{
+  cursor: pointer;
+  box-shadow: 2px 2px 5px #888888;
+}
+.clear-filter:disabled{
+  cursor: not-allowed;
   box-shadow: none;
+  
 }
 
 

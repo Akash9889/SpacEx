@@ -1,10 +1,13 @@
 import React from 'react'
 import {spacexContext} from '../context/ContextProvider'
 
-export default function FilterBox() {
+import Button from './Button'
 
-    const {launchYears, filterLaunch, filterLand, filterYear} = React.useContext(spacexContext)
+function FilterBox() {
 
+    const {year, successLaunch, successLand, launchYears, 
+        filterLaunch, filterLand, filterYear, clearAllFilters} = React.useContext(spacexContext)
+       
     return (
             <div className='filters'>
                 <p>Filter Years</p>
@@ -12,6 +15,7 @@ export default function FilterBox() {
                 <div  className = 'year-container'>
                     {launchYears.length ? launchYears.map(ly => 
                     <button key = {ly} 
+                        style = { year === ly.toString() ? { backgroundColor : '#4b9e44c0'} : null }
                         onClick= {(e) => filterYear(e.target.innerHTML) }
                         id='year-box' 
                         className = 'year-box' >
@@ -22,15 +26,26 @@ export default function FilterBox() {
                 <p>Successfull Launch</p>
                 <hr/>
                 <div className = 'year-container'>
-                    <button  id='launch-true' onClick = {() => filterLaunch(true)} className= 'year-box'>True</button>
-                    <button onClick = {() => filterLaunch(false)} className= 'year-box'>False</button>
+                    <Button filter = {filterLaunch} status = {successLaunch}/>
                 </div>
                 <p>Successfull Land</p>
                 <hr/>
                 <div className = 'year-container' style={{marginBottom:'1em'}}>
-                    <button id='land-true' onClick = {() => filterLand(true)} className= 'year-box'>True</button>
-                    <button onClick = {() => filterLand(false)} className= 'year-box'>False</button>
+                    <Button filter = {filterLand} status = {successLand}/>
+                </div>
+                <p>Clear all Filters</p>
+                <hr/>
+                <div className = 'year-container' style={{marginBottom:'1em'}}>
+                    <button 
+                        id='land-true' 
+                        disabled = {year === '' && successLand === '' && successLaunch === ''}
+                        onClick = {() => clearAllFilters()} 
+                        className= 'clear-filter'>
+                            Clear Filters
+                    </button>
                 </div>
             </div>
     )
 }
+
+export default FilterBox

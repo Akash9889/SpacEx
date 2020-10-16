@@ -12,6 +12,7 @@ Component and container files -
 2)FilterBox.js
 3)LaunchPad.js
 4)SpaceShuttle.js
+5)Button.js
 
 => App.js - 
 -contains section and main part of the application
@@ -31,6 +32,10 @@ Component and container files -
 -presentational component only displaying data received from  LaunchPad.js.
 -useRef is used to observe the last component for infinte scroll.
 
+=>Button.js
+- Presentational component, consist of two buttons for filters
+- receiving filter and status as props 
+
 =>ContextProvider.js
 - render App component as a children and passing all teh state vales and functions 
 - contains all the api call management using a useEffect hook.
@@ -38,14 +43,12 @@ Component and container files -
 - maintain state of the whole app
 
 =>Basic UI tests are done.
-=>Apart from inbuilt Jest through create-react-app, for testing enzyme, jest-enzyme, react-test-rendered, enzyme-adapter-react-16 packages used.
-=>setupTests.js consit of basis test setup for enzyme.
+=>Apart from inbuilt Jest through create-react-app, for testing, enzyme, jest-enzyme, react-test-rendered, enzyme-adapter-react-16 packages used.
+=>setupTests.js consist of basis test setup for enzyme.
 
 
 =>scope of improvement
--should include a clear filter option
--buttons selected state should be maintained
--image error handleing 
+-image error handling 
 
 
 

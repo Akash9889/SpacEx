@@ -13,8 +13,8 @@ function ContextProvider({children}) {
     const [loading, setLoading]     = React.useState(true)
     const [error, setError]         = React.useState('')
     const [lazy, setLazy]           = React.useState(1)
-    const [successLaunch, setSuccessLaunch] = React.useState()
-    const [successLand, setSuccessLand]     = React.useState()
+    const [successLaunch, setSuccessLaunch] = React.useState('')
+    const [successLand, setSuccessLand]     = React.useState('')
     
     React.useEffect( () => {
         setFirstLoad(true)
@@ -59,23 +59,34 @@ function ContextProvider({children}) {
             setShuttles([])
             setYear(ear); 
             setLazy(1);
-   }, [year])
+   }, [])
 
     const filterLaunch   = React.useCallback((launch) => {
         setShuttles([])
         setSuccessLaunch(launch)
         setLazy(1);
-    }, [successLaunch])
+    }, [])
     
     const filterLand    = React.useCallback((land) => {
         setShuttles([])
         setSuccessLand(land)
         setLazy(1);
-    }, [successLand])
+    }, [])
+
+    const clearAllFilters  = React.useCallback(() => {
+        setShuttles([])
+        setYear(''); 
+        setSuccessLand('')
+        setSuccessLaunch('')
+        setLazy(1);
+    }, [])
     
-    const lazyLoad      = React.useCallback(() => setLazy(prev => prev + 1), [lazy] ) 
+    const lazyLoad      = React.useCallback(() => setLazy(prev => prev + 1), [] ) 
 
     const value = {
+        year,
+        successLaunch,
+        successLand,
         error,
         firstLoad,
         shuttles,
@@ -84,7 +95,8 @@ function ContextProvider({children}) {
         filterYear,
         filterLaunch,
         filterLand,
-        lazyLoad
+        lazyLoad,
+        clearAllFilters
     }
     
     return (
