@@ -5,23 +5,16 @@ import FilterBox from './components/FilterBox'
 import LaunchPad from './containers/LaunchPad'
 
 function App() {
-  const { firstLoad, loading, shuttles, filterYear } = React.useContext(spacexContext)
-
-  React.useEffect(() => {
-    let div = document.getElementsByClassName('year-container')
-    if(div[0] !== undefined ){
-      div[0].addEventListener('click', (e) => filterYear(e) )
-    }
-    return () => div[0].removeEventListener('click', (e) => filterYear(e) )
-  }
-  ,[firstLoad])
+  const { firstLoad, loading, shuttles } = React.useContext(spacexContext)
 
   return (
     <div className="App">
       <header>SpacEx Launch Programs</header>
       {firstLoad ? <div className ='firstloader'></div> : 
       <div className = 'container'>
-        <FilterBox/>
+        <section>
+          <FilterBox/>
+        </section>
         <main>
           <LaunchPad data = {shuttles}/>
         </main>

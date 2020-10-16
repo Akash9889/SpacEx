@@ -123,6 +123,7 @@ main{
 }
 .year-box:hover{
   box-shadow: 2px 2px 5px #888888;
+  cursor: pointer;
 }
 .year-box:focus{
   background-color:#4b9e44c0;
@@ -223,7 +224,7 @@ main{
 
 /* ///////////////////// Mobile View ///////////////////// */
 @media (max-width:700px){
-  .header{
+  header{
     justify-content: center;
   }
   .container{

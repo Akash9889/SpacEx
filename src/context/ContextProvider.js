@@ -55,16 +55,13 @@ function ContextProvider({children}) {
     }, [year, successLaunch, successLand, lazy])
 
 
-    const filterYear    = React.useCallback((e) => { 
-        if(e.target.nodeName === 'BUTTON' ) {
+    const filterYear    = React.useCallback((ear) => { 
             setShuttles([])
-            setYear(e.target.innerHTML); 
+            setYear(ear); 
             setLazy(1);
-        }
-         
-    }, [year])
+   }, [year])
 
-    const filterLunch   = React.useCallback((launch) => {
+    const filterLaunch   = React.useCallback((launch) => {
         setShuttles([])
         setSuccessLaunch(launch)
         setLazy(1);
@@ -79,12 +76,13 @@ function ContextProvider({children}) {
     const lazyLoad      = React.useCallback(() => setLazy(prev => prev + 1), [lazy] ) 
 
     const value = {
+        error,
         firstLoad,
         shuttles,
         loading,
         launchYears,
         filterYear,
-        filterLunch,
+        filterLaunch,
         filterLand,
         lazyLoad
     }
