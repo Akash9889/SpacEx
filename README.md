@@ -49,6 +49,8 @@ Component and container files -
 
 =>scope of improvement
 -image error handling 
+-jsdocs need to be added
+
 
 
 
