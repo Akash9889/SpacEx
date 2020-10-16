@@ -1,5 +1,47 @@
 Deployed at https://spacexlaunchesdashboard.herokuapp.com/
 
+SpaceEx app is a dashboard application showing all the data using spacEx api.
+Application is based on REACT and using Context Api for state management and created using create-react-app.
+Only consist of Functional components and hence used hooks api extensivly.
+Try to follow DRY principle and functional programming.
+For optimization and performance, debouncing, infinte scroll and useCallback is applied
+
+
+Component and container files - 
+1)App.js
+2)FilterBox.js
+3)LaunchPad.js
+4)SpaceShuttle.js
+
+=> App.js - 
+-contains section and main part of the application
+-<section> contains FilterBox component
+-<main> contains LaunchPad container component
+
+=>FilterBox.js
+-contains three filters based on years, success launch and sucessland. All the values are getting from constants.js file
+-receiving firstLoad, loading, shuttles values from ContextProvider
+
+=>LaunchPad.js
+-it is a container component, consist logic for infinte scroll and rendering all the  SpaceShuttle component
+-InterSectionObserver Api is used for infinte scroll
+-Based on the data receiver from the Api call through ContextProvider SpaceShuttle component is mapped.
+
+=>SpaceShuttle.js
+-presentational component only displaying data received from  LaunchPad.js.
+-useRef is used to observe the last component for infinte scroll.
+
+=>Basic UI tests are done.
+=>Apart from inbuilt Jest through create-react-app, for testing enzyme, jest-enzyme, react-test-rendered, enzyme-adapter-react-16 packages used.
+=>setupTests.js consit of basis test setup for enzyme.
+
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
